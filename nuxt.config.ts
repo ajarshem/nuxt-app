@@ -1,7 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/ui', 'botid/nuxt'],
-  css: ['~/assets/css/main.css'],
+  modules: ['botid/nuxt'],
   compatibilityDate: '2025-07-15',
   ssr: false,
 })

@@ -1,13 +1,25 @@
 <template>
-    <UForm :state="state" class="w-full max-w-md mx-auto mt-8" @submit="submit">
-        <UFormField name="firstName" label="First Name">
-            <UInput v-model="state.firstName" placeholder="First Name" class="w-full" variant="soft" />
-        </UFormField>
-        <UButton type="submit" class="mt-4 w-full">
+    <form @submit.prevent="submit" class="w-full max-w-md mx-auto mt-8">
+        <div class="form-field mb-4">
+            <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
+                First Name
+            </label>
+            <input 
+                id="firstName"
+                v-model="state.firstName" 
+                type="text"
+                placeholder="First Name" 
+                class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            />
+        </div>
+        <button 
+            type="submit" 
+            class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        >
             Submit
-        </UButton>
-    </UForm>
-    <div v-if="response" class="mt-4 p-4 bg-green-100 text-green-800 rounded">
+        </button>
+    </form>
+    <div v-if="response" class="mt-4 p-4 bg-green-100 text-green-800 rounded-md">
         {{ response }}
     </div>
 </template>
